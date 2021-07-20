@@ -1,102 +1,167 @@
-'''계산기 만들기 과제'''
+# from tkinter import *
+# from tkinter import ttk
+# '''
+# 윈도우창 +타이틀
+# 입력받는 필드 Entry
+# 버튼
+# '''
+# # 함수 추가
+# def button_pressed(number):
+#     current = number_cal.get()
+#     number_cal.delete(0, END)
+#     number_cal.insert(0,current+number) #텍스트 창으로 숫자 전송 'end' 오른쪽 .insert 에러
+#     print(number,"pressed")
+# def button_clear():
+#     number_cal.delete(0,END)
+#
+# def button_add():
+#         first_num = number_cal.get()
+#         global f_num
+#         global math
+#         math='add'
+#         f_num=int(first_num)
+#         number_cal.delete(0,END)
+#
+#
+# window = Tk()
+# window.title("myu_계산기")
+# window.geometry("320x600") #창 너비, 높이 위치 설정 w h +- x +- y
+#
+# # 텍스트 창의 값 저장할 변수.
+# entry_value = StringVar(window, value='')
+# # 숫자 및 결과 표시창
+# number_cal = Entry(window, textvariable=entry_value,width=10)
+# number_cal.grid(row=0, column=0, columnspan=4,ipadx=80, ipady=40)
+# # ipadx ipady 그 창 x y 크기
+# # photo = PhotoImage(file="")
+# button_squared  = Button(window, text="^", width=10,height=5,fg="white",bg="black",command=lambda: button_pressed('^'));button_squared.grid(row=1, column=0)
+# button_sqrt     = Button(window, text="sqrt", width=10,height=5,command=lambda: button_pressed('1'));button_sqrt.grid(row=1, column=1)
+# button_clear    = Button(window, text="c", width=10,height=5, command=button_clear());button_clear.grid(row=1, column=2)
+# button_back     = Button(window, text="<-", width=10,height=5, command=lambda: button_pressed('1'));button_back.grid(row=1, column=3)
+#
+# button1 = Button(window, text="1", command=lambda: button_pressed('1'));button1.grid(row=2, column=0) #lambda 익명 함수
+# button2 = Button(window, text="2", width=10,height=5, command=lambda: button_pressed('2'));button2.grid(row=2, column=1)
+# button3 = Button(window, text="3", width=10,height=5, command=lambda: button_pressed('3'));button3.grid(row=2, column=2)
+# button_div = Button(window, text="/", width=10,height=5, command=lambda: button_pressed('/'));button_div.grid(row=2, column=3)
+#
+# button4 = Button(window, text="4", width=10,height=5, command=lambda: button_pressed('4'));button4.grid(row=3, column=0)
+# button5 = Button(window, text="5", width=10,height=5, command=lambda: button_pressed('5'));button5.grid(row=3, column=1)
+# button6 = Button(window, text="6", width=10,height=5, command=lambda: button_pressed('6'));button6.grid(row=3, column=2)
+# button_mul = Button(window, text="*", width=10,height=5, command=lambda: button_pressed('*'));button_mul.grid(row=3, column=3)
+#
+# button_7 = Button(window, text="7", width=10,height=5, command=lambda: button_pressed('7'));button_7.grid(row=4, column=0)
+# button_8 = Button(window, text="8", width=10,height=5, command=lambda: button_pressed('8'));button_8.grid(row=4, column=1)
+# button_9 = Button(window, text="9", width=10,height=5, command=lambda: button_pressed('9'));button_9.grid(row=4, column=2)
+# button_sub = Button(window, text="-", width=10,height=5, command=lambda: button_pressed('-'));button_sub.grid(row=4, column=3)
+#
+# button_0 = Button(window, text="0", width=10,height=5, command=lambda: button_pressed('0'));button_0.grid(row=5, column=0)
+# button_point = Button(window, text=".", width=10,height=5, command=lambda: button_pressed('.'));button_point.grid(row=5, column=1)
+# button_equal = Button(window, text="=", width=10,height=5, );button_equal.grid(row=5, column=2)
+# button_add = Button(window, text="+", width=10,height=5, command=button_add());button_add.grid(row=5, column=3)
+#
+# window.mainloop()
+
+# import tkinter as tk
+# operator={'+':1,''}
+# def Button_clear():
+#
+#
+# window =tk.Tk()
+# window.title("계산기_v.뮤")
+#
+# entry_value = tk.StringVar()
+# displays = tk.Entry(window,textvariable = entry_value)
+# displays.grid(row=0, column=0,columnspan=4)
+#
+#
+#
+#
+# tk.Button(window, text="1", width=10,height=5).grid(row=1, column=0)
+# tk.Button(window, text="2", width=10,height=5).grid(row=1, column=1)
+# tk.Button(window, text="3", width=10,height=5).grid(row=1, column=2)
+# tk.Button(window, text="0", width=10,height=5).grid(row=1, column=3)
+# tk.Button(window, text="0", width=10,height=5).grid(row=2, column=0)
+# tk.Button(window, text="0", width=10,height=5).grid(row=2, column=1)
+# tk.Button(window, text="0", width=10,height=5).grid(row=2, column=2)
+# tk.Button(window, text="0", width=10,height=5).grid(row=2, column=3)
+# tk.Button(window, text="0", width=10,height=5).grid(row=3, column=0)
+# tk.Button(window, text="0", width=10,height=5).grid(row=3, column=1)
+# tk.Button(window, text="0", width=10,height=5).grid(row=3, column=2)
+# tk.Button(window, text="0", width=10,height=5).grid(row=3, column=3)
+# tk.Button(window, text="0", width=10,height=5).grid(row=4, column=0)
+# tk.Button(window, text="0", width=10,height=5).grid(row=4, column=1)
+# tk.Button(window, text="0", width=10,height=5).grid(row=4, column=2)
+# tk.Button(window, text="0", width=10,height=5).grid(row=4, column=3)
+# window.mainloop()
+
 import tkinter as tk
+from tkinter.font import Font
 
-cal_values = 0
-oprator = {'+':1, '-': 2, '/': 3,'*': 4,'C': 5,'=': 6}#딕셔너리 사용 명령을 정수로 치환
-stovalue = 0 # 더하기 할것지 빼기할건지
-opPre = 0  #이전 op 무엇인지 알기위해 변수 선언
+results=""
+results1=""
+results2=""
+def Button_click(event):
+    print(event)
+
+    global results1
+    results1 += str(event)
+    results=results1
+    text_value.set(results)
+    print(results)
 def clear():
-    global cal_values, stovalue, opPre
-    cal_values = 0
-    opPre = 0
-    stovalue = 0
-    str_value.set(cal_values) # 0을 다시 출력
-def number_click(value):
-    # print('숫자',value)
-    global cal_values
-    cal_values = (cal_values*10) + value  # 숫자 누르면 자리수 증가되게
-    str_value.set(cal_values)
-def oprator_click(value):
-    # print('명령',value)
-    #현재 눌린것과 이전에 눌린게 무엇인지 알아야함
-    global cal_values, oprator, stovalue, opPre
-    op = oprator[value] #키값
-    if op == 5: #C
-        clear()
-    elif cal_values == 0: # 처음 눌럿거나 명령이 없을 때 값이 없을 떄
-        opPre = 0  #이전의 명령을 초기화
-    elif opPre == 0: #이전 명령이 없고 명령이 새로 눌렸을때
-        stovalue=cal_values  # 현재값 저장
-        cal_values = 0       # 화면 값 0으로 초기화
-        str_value.set(cal_values) # 출력
+    global results1
+    results1 =""
+    displays.delete(0, tk.END)
 
-
-    opPre = op #백업
-
-def button_click(value):
-    # print(value)
+def enter():
+    global results1
     try:
-        value = int(value) # 숫자는 에러x 다른것 에러 #숫자일떄 넘버라는 함수
-        number_click(value)
+        in_results=eval(results1)
+        displays.delete(0,tk.END)
+        displays.insert(0,in_results) # 계산 결과 출력력    # results=0
+        results1=""
     except:
-        oprator_click(value)
+        displays.delete(0, tk.END)
+        displays.insert(0, '다시 입력하세요')
+        results1 = ""
+def backspace():
+    global results1
+    results2 = results1[:-1]
+    text_value.set(results2)
+    results1 = results2
 
-win = tk.Tk()   #윈도우 생성
-win.title("뮤 계산기")
+window=tk.Tk()
+window.title("myu_계산기")
+window.geometry("800x600")
+window.resizable(0,0)
+font = Font(family='Comic Sans MS',size=30)
+text_value = tk.StringVar()
+displays = tk.Entry(window,textvariable = text_value,justify="right",font=font
+                    )
 
-# 누를떄 연산하고 결과 출력
-# 버튼을 누를떄 액션 처리
-#
+displays.grid(row=0, column=0,columnspan=4,ipadx=80, ipady=40)
+# displays.pack() #위치를 정해주는 명령어
+# 파이 루트 제곱 e 00
+tk.Button(window, text="c", width=10,height=5,command=lambda :clear()).grid(row=1, column=0)
+tk.Button(window, text="(", width=10,height=5,command=lambda :Button_click('(')).grid(row=1, column=1)
+tk.Button(window, text=")", width=10,height=5,command=lambda :Button_click(')')).grid(row=1, column=2)
+tk.Button(window, text="/", width=10,height=5,command=lambda :Button_click('/')).grid(row=1, column=3)
+tk.Button(window, text="7", width=10,height=5,command=lambda :Button_click('7')).grid(row=2, column=0)
+tk.Button(window, text="8", width=10,height=5,command=lambda :Button_click('8')).grid(row=2, column=1)
+tk.Button(window, text="9", width=10,height=5,command=lambda :Button_click('9')).grid(row=2, column=2)
+tk.Button(window, text="*", width=10,height=5,command=lambda :Button_click('*')).grid(row=2, column=3)
+tk.Button(window, text="4", width=10,height=5,command=lambda :Button_click('4')).grid(row=3, column=0)
+tk.Button(window, text="5", width=10,height=5,command=lambda :Button_click('5')).grid(row=3, column=1)
+tk.Button(window, text="6", width=10,height=5,command=lambda :Button_click('6')).grid(row=3, column=2)
+tk.Button(window, text="-", width=10,height=5,command=lambda :Button_click('-')).grid(row=3, column=3)
+tk.Button(window, text="1", width=10,height=5,command=lambda :Button_click('1')).grid(row=4, column=0)
+tk.Button(window, text="2", width=10,height=5,command=lambda :Button_click('2')).grid(row=4, column=1)
+tk.Button(window, text="3", width=10,height=5,command=lambda :Button_click('3')).grid(row=4, column=2)
+tk.Button(window, text="+", width=10,height=5,command=lambda :Button_click('+')).grid(row=4, column=3)
+tk.Button(window, text="0", width=10,height=5,command=lambda :Button_click('0')).grid(row=5, column=0)
+tk.Button(window, text=".", width=10,height=5,command=lambda :Button_click('.')).grid(row=5, column=1)
+tk.Button(window, text="<-", width=10,height=5,command=lambda :backspace()).grid(row=5, column=2)
+equals=tk.Button(window, text="=", width=10,height=5,command=lambda :enter())
+equals.grid(row=5, column=3)
 
-
-str_value = tk.StringVar()
-str_value.set(str(cal_values)) # 문자로 변환해서 set을 하면
-dis = tk.Entry(win, textvariable=str_value, justify='right') #폰트도 키우자
-               # 에딧창에 계속 자동으로 업데이트  justify 숫자 어디에 배치할 것인가 columnsean 몇개 가져갈것인가가dis.grid(column=0, row=0)
-dis.grid(column=0, row=0, columnspan=4, ipadx=100, ipady=50) # ipadx 크기 키우는
-'''열을 어디까지 쓸것인가'''
-calItem=[['1','2','3','4'],
-         ['5','6','7','8'],
-         ['9','0','+','-'],
-         ['/','*','C','=']]
-for i,items in enumerate(calItem): #i 인덱스  items 하나의 리스트 cal[i][k]
-    for k,item in enumerate(items): # k 1 2 3 4 items 문자
-
-        try:
-            color = int(item)
-            color = 'black'  # 숫자만
-        except:
-            color = 'green'   # 기호들
-
-        bt = tk.Button(win,
-                       text=item,
-                       width=10,
-                       height=5,
-                       bg = color,
-                       fg = 'red',
-                       command=lambda cmd=item: button_click(cmd) # lambda 간이적인 함수
-                       ) #변수 선언
-        bt.grid(column=k, row=(i+1)) # +1은 실행창 때문에
-
-
-# tk.Button(win, text='1', width=10, height=5).grid(column=0, row=1)
-# tk.Button(win, text='2', width=10, height=5).grid(column=1, row=1)
-# tk.Button(win, text='3', width=10, height=5).grid(column=2, row=1)
-# tk.Button(win, text='4', width=10, height=5).grid(column=4, row=1)
-#
-# tk.Button(win, text='5', width=10, height=5).grid(column=0, row=2)
-# tk.Button(win, text='6', width=10, height=5).grid(column=1, row=2)
-# tk.Button(win, text='7', width=10, height=5).grid(column=2, row=2)
-# tk.Button(win, text='8', width=10, height=5).grid(column=4, row=2)
-#
-# tk.Button(win, text='9', width=10, height=5).grid(column=0, row=3)
-# tk.Button(win, text='0', width=10, height=5).grid(column=1, row=3)
-# tk.Button(win, text='+', width=10, height=5).grid(column=2, row=3)
-# tk.Button(win, text='-', width=10, height=5).grid(column=4, row=3)
-#
-# tk.Button(win, text='/', width=10, height=5).grid(column=0, row=4)
-# tk.Button(win, text='*', width=10, height=5).grid(column=1, row=4)
-# tk.Button(win, text='c', width=10, height=5).grid(column=2, row=4)
-# tk.Button(win, text='=', width=10, height=5).grid(column=4, row=4)
-
-win.mainloop()
+window.mainloop()
